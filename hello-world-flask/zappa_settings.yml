@@ -1,0 +1,8 @@
+---
+dev:
+    app_function: app.app
+    s3_bucket: zappa-klq7fgoru
+    aws_region: ap-southeast-2
+    profile_name: personal
+    project_name: flask-hello
+    runtime: python3.6
