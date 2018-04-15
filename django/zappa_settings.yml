@@ -1,0 +1,9 @@
+---
+dev:
+    django_settings: example.aws-settings
+    app_function: app.app
+    s3_bucket: zappa-yp7p639dg
+    aws_region: ap-southeast-2
+    profile_name: personal
+    project_name: django-hello
+    runtime: python3.6
