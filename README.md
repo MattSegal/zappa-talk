@@ -2,9 +2,9 @@
 
 Zappa talk for MelbDjango Thursday 19 April 2018
 
-`django/` is an example django app using Zappa
-`flask/` is an example flask app using Zappa
-`presentation.odp` is a slideshow made using LibreOffice Impress
+- `django/` is an example django app using Zappa
+- `flask/` is an example flask app using Zappa
+- `presentation.odp` is a slideshow made using LibreOffice Impress
 
 ### References
 
