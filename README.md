@@ -13,68 +13,6 @@
 https://edgarroman.github.io/zappa-django-guide/walk_database/
 https://edgarroman.github.io/zappa-django-guide/
 
-# Serverless computing
-
-Run functions in "the cloud"... somewhere.
-
-Focus on AWS Lambda
-
-Contract:
-	- pay by execution time
-	- scaling handled by provider
-	- startup time latency ("cold start")
-	- execution time limit
-
-
-Good
-	- only pay for what you use (super cheap)
-	- low operating overhead
-	- event-based programming
-		- upload to S3 bucket
-
-Bad
-	- monitoring / debugging
-		- can't SSH in
-		- hard to reproduce environment
-	- concurrent execution limirs (100?)
-
-Use cases
-	- ephemeral or test services
-	- handling file uploads
-		- custom image processing / thumbnailing
-	- handling very irregular traffic
-		- New York Times crossword (300k users in ~1h)
-
-
-Major Platforms
-	- AWS Lambda
-	- Google Cloud Functions
-	- Azure Functions
-
-# Resource Constraints
-
-https://docs.aws.amazon.com/lambda/latest/dg/limits.html
-
-	- 500MB of disk space in /tmp
-	- 128- 1536 MB of memory
-
-# Cold start
-
-AWS provisions a "container" (of some sort) when a function is 1st run. This cold-start incurs a latency of ~5s.
-Subsequent requests will not have the cold start problem.
-
-After some time period (5-15 minutes) the container will be removed and the cold-start will happen again.
-
-# Data storage
-
-- DynamoDB
-- Aurora serverless (preview?)
-- NoDB (using S3)
-- Postgres on EC2
-
-# API Gateway
-
-zzzzz
 
 # Events and Callbacks
 
@@ -118,6 +56,7 @@ binarys for the lambda environment
 - flask "hello world" a lot simpler to get working out of the box
 
 - django requires using external static files or whitenoise
+* Running managment commands
 
 
 # Debugging
@@ -131,16 +70,21 @@ environment not always reproducible (PIL versions)
 AWS environment a blessing and a curse
 but it's easy to set up a dev/test/staging environment
 
-# Scaling + Cost
 
-DynamoDB limits
-Max concurrency for lambda
+# Events and scheduled tasks
+
+!!!!!!!!!!!!!!!!!!!!!!111
+
+
+# Static Files
+
+django-storages
+zappa manage dev "collectstatic --noinput"
 
 
 # Possible but out of scope
 
 * Custom domain
-* Running managment commands
 * Secrets
 * IAM Roles
 
@@ -149,3 +93,5 @@ Max concurrency for lambda
 Very easy to get a quick Flask app up with Zappa
 
 You _can_ run a Django app with Zappa, but if you're going to the trouble you should probably consider just setting up a VM.
+
+- management commands have no stdin

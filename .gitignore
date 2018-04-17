@@ -1,3 +1,4 @@
 secrets.py
 *.sqlite3
 *.pyc
+.~lock*

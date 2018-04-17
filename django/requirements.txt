@@ -1,3 +1,5 @@
 django
 zappa
 psycopg2
+django-storages
+boto3
